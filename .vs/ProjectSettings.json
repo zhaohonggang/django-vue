@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+
+
+    {
+      "name": "Django",
+      "type": "python",
+      "request": "launch",
+      "stopOnEntry": true,
+      "pythonPath": "C:\\NewDev\\env\\gcgdata\\Scripts\\python.exe",
+      "program": "${workspaceRoot}/manage.py",
+      "cwd": "${workspaceRoot}",
+      "args": [
+        "runserver",
+        "--noreload"
+      ],
+      "debugOptions": [
+        "WaitOnAbnormalExit",
+        "WaitOnNormalExit",
+        "RedirectOutput",
+        "DjangoDebugging"
+      ]
+    }
+
+  ]
+}

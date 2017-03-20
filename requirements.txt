@@ -1,0 +1,13 @@
+appdirs==1.4.0
+Django==1.10.5
+django-cors-headers==2.0.2
+django-mssql==1.8
+djangorestframework==3.4.6
+djangorestframework-expiring-authtoken==0.1.4
+packaging==16.8
+psycopg2==2.7
+pyparsing==2.1.10
+pypiwin32==220
+requests==2.13.0
+six==1.10.0
+wfastcgi==2.2.1
