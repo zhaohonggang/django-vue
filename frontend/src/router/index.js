@@ -46,6 +46,10 @@ export default new Router({
                     component: resolve => require(['../components/page/BaseCharts.vue'], resolve)   // vue-echarts-v3组件
                 },
                 {
+                    path: '/begin',
+                    component: resolve => require(['../components/page/Begin.vue'], resolve)   // vue-echarts-v3组件
+                },
+                {
                     path: '/mixcharts',
                     component: resolve => require(['../components/page/MixCharts.vue'], resolve)    // vue-echarts-v3组件
                 }

@@ -3,14 +3,15 @@
         <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router>
             <el-submenu index="1">
                 <template slot="title"><i class="el-icon-menu"></i>Works</template>
-                <el-menu-item index="readme">
-                    <i class="el-icon-setting"></i>自述
-                </el-menu-item>
-               <el-menu-item @click="gotopyadmin" >API Admin</el-menu-item>
+                <el-menu-item index="begin">Begin</el-menu-item>
+                <el-menu-item @click="gotopyadmin" >API Admin</el-menu-item>
             </el-submenu>
            <el-submenu index="100">
                 <template slot="title"><i class="el-icon-menu"></i>Help</template>
-                 <el-submenu index="102">
+                <el-menu-item index="readme">
+                    <i class="el-icon-setting"></i>自述
+                </el-menu-item>
+                <el-submenu index="102">
                     <template slot="title"><i class="el-icon-menu"></i>表格</template>
                     <el-menu-item index="basetable">基础表格</el-menu-item>
                     <el-menu-item index="vuetable">Vue表格组件</el-menu-item>

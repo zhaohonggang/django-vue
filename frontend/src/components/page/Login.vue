@@ -61,7 +61,7 @@
                             localStorage.setItem('ms_username',response.data.user);
                             //console.log('call api succeed!');
                             // console.log(response.data.user);
-                            this.$router.push('/readme');
+                            this.$router.push('/begin');
                         }).catch( response => {
                             //this.currentView = 'login-page'
                             // this.$router.push('/readme');
@@ -86,7 +86,7 @@
                                     Cookies.set('token', response.data.token, { expires: 365});
                                 // this.loginSuccess()
                                     localStorage.setItem('ms_username',self.ruleForm.username);
-                                    self.$router.push('/readme');
+                                    self.$router.push('/begin');
                                 }
                                 else{
                                     console.log('error submit!!');
