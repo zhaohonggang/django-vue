@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework_expiring_authtoken',
     'corsheaders',
+    'frontend',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -148,8 +149,13 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    os.path.join(BASE_DIR, "frontend/dist/static"),
+    # os.path.join(BASE_DIR, "frontend/dist/static"),
 ]
+
+'''STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]'''
 
 EXPIRING_TOKEN_LIFESPAN = datetime.timedelta(minutes=20)
 
