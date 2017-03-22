@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['.mysite.com', 'api.gcg.com', '.grocercapital.com', '.grantzhao
 # Application definition
 
 INSTALLED_APPS = [
-    'gcgcommerce',
+    'businessadmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

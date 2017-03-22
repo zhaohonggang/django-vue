@@ -17,11 +17,12 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib import admin
+from businessadmin.admin import admin_site
 from django.views.generic.base import RedirectView, TemplateView
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    # url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin_site.urls),
     url(r'^', include('api.urls')),
     # url(r'^$', RedirectView.as_view(url='/admin')),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
