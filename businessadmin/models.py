@@ -59,17 +59,21 @@ class InventoryUpdate(models.Model):
     id = models.AutoField(db_column='Id', primary_key=True)
     # Field name made lowercase.
     Name = models.CharField(db_column='Name', max_length=400)
-    ManufacturerPartNumber = models.CharField(db_column='ManufacturerPartNumber', max_length=400)
+    ManufacturerPartNumber = models.CharField(db_column='ManufacturerPartNumber', max_length=400, verbose_name='Code')
     ManageInventoryMethodId = models.IntegerField(db_column='ManageInventoryMethodId', default = 0)
-    StockQuantity = models.IntegerField(db_column='StockQuantity', default=1000)
-    UnitPrice = models.DecimalField(db_column='UnitPrice', max_digits=18, decimal_places=4) 
-    VendorPrice = models.DecimalField(db_column='VendorPrice', max_digits=18, decimal_places=4) 
-    UnitsPerCase = models.DecimalField(db_column='UnitsPerCase', max_digits=18, decimal_places=4, default=20) 
-    PriceMeasure = models.CharField(db_column='PriceMeasure', max_length=400, default='kg')
+    StockQuantity = models.IntegerField(db_column='StockQuantity', default=1000, verbose_name='Inventory')
+    VendorPrice = models.DecimalField(db_column='VendorPrice', max_digits=18, decimal_places=4, verbose_name='Cost') 
+    UnitPrice = models.DecimalField(db_column='UnitPrice', max_digits=18, decimal_places=4, verbose_name='Unit Price') 
+    PriceMeasure = models.CharField(db_column='PriceMeasure', max_length=400, default='kg', verbose_name='Unit')
+    UnitsPerCase = models.DecimalField(db_column='UnitsPerCase', max_digits=18, decimal_places=4, default=20, verbose_name='# /Case') 
+    CasePrice = models.DecimalField(db_column='CasePrice', max_digits=18, decimal_places=4, verbose_name='Case Price') 
     VendorId = models.IntegerField(db_column='VendorId', default=103)
     GCGBatchId = models.IntegerField(db_column='GCGBatchId', default=91)
-    published = models.BooleanField(db_column='Published', default=True)
-   
+    Published = models.BooleanField(db_column='Published', default=True)
+    @property
+    def InStock(self):
+        return self.StockQuantity > 0
+    
     class Meta:
         managed = False
         db_table = 'Inventory_update'
